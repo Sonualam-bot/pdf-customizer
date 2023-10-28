@@ -1,0 +1,14 @@
+.formStyle{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    border: 1px solid black;
+    width: 100%;
+    text-align: center;  
+    padding: 20px; 
+    margin-top: 20px;
+}
+
+.form-control{
+    border-color: black !important ;
+}

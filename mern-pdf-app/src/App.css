@@ -1,0 +1,14 @@
+#root {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.home-container{
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 95vw;
+  padding: 20px;
+  margin: 1rem auto;
+}

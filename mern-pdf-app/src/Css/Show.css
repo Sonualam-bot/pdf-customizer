@@ -1,0 +1,8 @@
+.uploaded{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    justify-content: flex-start;
+    align-items: center;
+}
