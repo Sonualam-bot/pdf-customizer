@@ -10,8 +10,9 @@ export const PdfContextProvider = ({ children }) => {
     file: null,
   });
   const [pdfUrl, setPdfUrl] = useState(null);
+  const [examplePdf, setExamplePdf] = useState();
 
-  const BASE_URL = "http://localhost:4000/api/v1";
+  const BASE_URL = "https://mern-pdf.onrender.com/api/v1";
 
   const fetchPdf = async () => {
     try {
@@ -19,10 +20,14 @@ export const PdfContextProvider = ({ children }) => {
 
       if (response.status === 200) {
         const data = response.data.pdf;
-        setAllPdf(data);
+        if (data) {
+          setAllPdf(data);
+        }
       }
     } catch (error) {
       console.log(error);
+      // Handle errors gracefully, perhaps display an error message to the user
+      setAllPdf(null); // Set the state to null or default value in case of error
     }
   };
 
@@ -35,6 +40,7 @@ export const PdfContextProvider = ({ children }) => {
       });
       if (response.status === 200) {
         const data = response.data.pdf;
+
         return data;
       }
     } catch (error) {
@@ -95,6 +101,8 @@ export const PdfContextProvider = ({ children }) => {
     submitPdf,
     pdfUrl,
     setPdfUrl,
+    examplePdf,
+    setExamplePdf,
   };
 
   return (
