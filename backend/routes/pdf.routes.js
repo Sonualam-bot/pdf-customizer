@@ -18,6 +18,7 @@ pdfRouter.post("/upload-files", upload.single("file"), async (req, res) => {
       res.status(200).json({
         success: true,
         message: "Successfully added pdf",
+        path: req.file.path,
         pdf: upload,
       });
     }
