@@ -33,7 +33,7 @@ pdfRouter.post("/upload-files", upload.single("file"), async (req, res) => {
 pdfRouter.get("/pdf", async (req, res) => {
   try {
     const pdfData = await getAllPdf();
-    if (pdfData.length === 0) {
+    if (!pdfData) {
       res.status(404).json({
         success: false,
         message: "No pdfs in db",
